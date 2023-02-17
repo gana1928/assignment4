@@ -1,0 +1,26 @@
+pipeline{
+    agent any
+    stages {
+        stage('preparation') {
+            steps {
+                git branch:'main',
+                url:'https://github.com/gana1928/assignment4.git',
+                credentialsId:'0027'
+                sh 'javac a.java'
+                sh 'java a'
+            }
+        }
+         stage('build') {
+            steps {
+               echo "build started"
+               echo "ended"
+            }
+        }
+         stage('test') {
+            steps {
+                echo "test started"
+               echo "ended"
+            }
+        }
+    }
+}
